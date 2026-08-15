@@ -9,10 +9,12 @@ setup(
     install_requires=[
         "transformers>=4.40",
         "accelerate",
+        "bitsandbytes",
         "datasets",
         "torch",
         "numpy",
         "pandas",
         "matplotlib",
+        "google-genai",
     ],
 )

@@ -1,6 +1,7 @@
 transformers>=4.40
 accelerate
 bitsandbytes
+google-genai
 datasets
 torch
 numpy

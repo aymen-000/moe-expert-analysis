@@ -1,4 +1,4 @@
-# moe-expert-analysis
+# Mixture of Experts: Are They Really Experts?
 
 Interpretability for sparse Mixture-of-Experts transformers (Switch
 Transformer family). This is the code behind a blog post on MoE routing
@@ -27,7 +27,7 @@ python scripts/01_collect_domain_routing.py --base-dir $BASE --model $MODEL
 
 # 2. Cache raw activations flowing into each expert, for SAE training
 python scripts/02_collect_expert_activations.py --base-dir $BASE --model $MODEL \
-    --layers enc_0 enc_5 enc_11
+    --layers enc_1 enc_5 enc_11
 
 # 3. Train an SAE on one expert and build its feature dashboard
 python scripts/03_train_sae_and_dashboard.py --base-dir $BASE --model $MODEL \
@@ -36,7 +36,7 @@ python scripts/03_train_sae_and_dashboard.py --base-dir $BASE --model $MODEL \
 # 4. Full autointerp export: SAE + top features + dashboards + summary figure,
 #    for every expert in the given layers
 python scripts/04_autointerp_export.py --base-dir $BASE --model $MODEL \
-    --layers enc_0 enc_11
+    --layers enc_1 enc_11
 
 # 5. (optional) Label exported features with an LLM
 export GEMINI_API_KEY=...
